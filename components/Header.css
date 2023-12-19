@@ -1,0 +1,89 @@
+header {
+  display: flex;
+  flex-direction: row;
+  padding: 0 3%;
+  background-color: #231F20;
+
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+
+  top: 0;
+
+  z-index: 999;
+}
+
+.logo {
+  width: 140px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  margin-right: 120px;
+  align-items: center;
+}
+
+.nav li {
+  display: flex;
+  font-size: 24px;
+  color: #fff;
+  margin-left: 40px;
+  list-style-type: none;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  align-items: center;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  color: #fff;
+  align-self: center;
+}
+
+
+
+.thebtn {
+  display: flex;
+  flex-direction: row;
+  padding: 12px;
+  background-color: #601B96;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #fff;
+  border: none;
+  height: 48px;
+  width: 160px;
+}
+
+
+.menu {
+  position: relative;
+}
+
+.menu li {
+  position: relative;
+  cursor: pointer;
+}

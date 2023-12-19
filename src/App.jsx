@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 
-import Home from "../src/Pages/Home";
-import NubisGo from "../src/Pages/NubisGo";
-import NubisCorp from "../src/Pages/NubisCorp";
-import NubisRider from "../src/Pages/NubisRider";
-import About from "../src/Pages/AboutUs";
-import PrivacyPolicy from "../src/Pages/PrivacyPolicy";
-import Terms from "../src/Pages/Terms";
+import Home from "../pages/Home";
+import NubisGo from "../pages/NubisGo";
+import NubisCorp from "../pages/NubisCorp";
+import NubisRider from "../pages/NubisRider";
+import About from "../pages/AboutUs";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import Terms from "../pages/Terms";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
