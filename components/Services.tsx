@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import ScrollReveal from "scrollreveal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
-import NubisGo from "../assets/images/MaskGroup.png";
-import Corporate from "../assets/images/CorporateW.png";
-import Rider from "../assets/images/RiderMan.png";
+import NubisGo from "@assets/images/MaskGroup.png";
+import Corporate from "@assets/images/CorporateW.png";
+import Rider from "@assets/images/RiderMan.png";
 import { Link, useNavigate } from "react-router-dom";
-import "./Services.css";
+import Image from "next/image";
 
 const Services = () => {
   const navigate = useNavigate();
@@ -22,41 +21,13 @@ const Services = () => {
     navigate("/NubisRider");
   }
 
-  // useEffect(() => {
-  //   // Initialize ScrollReveal
-  //   const sr = ScrollReveal({
-  //     reset: true, // Reveal elements again on re-scrolling
-  //     distance: "80px", // Distance the element moves
-  //     duration: 1400, // Duration of the animation
-  //     easing: "ease-in-out", // Animation easing
-  //   });
-
-  //   // Apply reveal animation to the first phone
-  //   sr.reveal(".firstcard", {
-  //     origin: "right",
-  //     delay: 200,
-  //   });
-
-  //   // Apply reveal animation to the second phone
-  //   sr.reveal(".midcard", {
-  //     origin: "left",
-  //     delay: 400,
-  //   });
-
-  //   // Apply reveal animation to the third phone
-  //   sr.reveal(".lastcard", {
-  //     origin: "right", // Change the origin if you want a different direction
-  //     delay: 400,
-  //   });
-  // }, []);
-
   return (
     <div className="OurServices">
       <h3 className="texts">Our Services</h3>
       <div className="services ">
         <div className="serviceCard ">
-          <img
-            className="imageee"
+          <Image
+            className="image"
             src={NubisGo}
             alt="Someone recieving a package."
           />
@@ -88,14 +59,14 @@ const Services = () => {
               <FontAwesomeIcon icon={faArrowRightLong} className="arrow" />
             </p>
           </div>
-          <img
+          <Image
             className="imageee"
             src={Corporate}
             alt="A corporate lady with a laptop."
           />
         </div>
         <div className="serviceCard ">
-          <img
+          <Image
             className="imageee"
             src={Rider}
             alt="A dispatch rider on his bike."
