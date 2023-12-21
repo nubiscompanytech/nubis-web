@@ -1,29 +1,54 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 import Logo from "../assets/images/logo.png";
 import Image from "next/image";
+import Link from "next/link";
+import { Affix, Button } from "antd";
+import AppStore from "@assets/images/App-store.svg";
+import PlayStore from "@assets/images/Play-store.svg";
+import { useRouter } from "next/router";
 
 const Header = () => {
-  const [nav, setNav] = useState(false);
-  const toggleNav = () => {
-    setNav(!nav);
-  };
+  const router = useRouter();
 
   return (
-    <div>
-      <header className="flex flex-row justify-between align-middle px-4 bg-black h-24 w-full ">
-        <div className="flex flex-row justify-between w-full">
-          <div>
-            <Image className="logo" src={Logo} alt="Nubis logo" />
+    <Affix className="text-base" offsetTop={0}>
+      <div className="top-banner bg-white p-2">
+        <div className="wrapper max-w-7xl mx-auto flex justify-center gap-10 items-center">
+          <div className="text-sm">
+            The Nubis app is available on the Google Play and App Stores
           </div>
-          <div className="md:flex flex-row justify-around">
-            <ul className="md:flex flex-row justify-around align-middle text-white hidden ">
+          <div className="flex items-center gap-4">
+            <Image
+              className="w-28 h-auto shadow-2xl"
+              src={AppStore}
+              alt="App Store logo"
+            />
+            <Image
+              className="w-28 h-auto"
+              src={PlayStore}
+              alt="Play Store logo"
+            />
+          </div>
+        </div>
+      </div>
+      <header className=" bg-gray-800 text-white px-4">
+        <div className="flex items-center justify-between h-14 max-w-7xl mx-auto">
+          <Link href={"/"}>
+            <Image className="logo" src={Logo} alt="Nubis logo" />
+          </Link>
+          <nav className="md:flex flex-row justify-around h-full">
+            <ul className="flex gap-4">
               {links.map((link) => (
                 <Link
-                  className="capitalize"
+                  className={
+                    "capitalize text-sm font-light grid place-items-center px-4 hover:text-yellow-600" +
+                    (router.pathname.includes(link.toLowerCase())
+                      ? " bg-white text-primaryColor font-bold"
+                      : "")
+                  }
                   key={link}
-                  to={"/" + link.replace(" ", "-")}
+                  href={"/" + link.replace(" ", "-").toLowerCase()}
                 >
                   {link}
                 </Link>
@@ -31,21 +56,25 @@ const Header = () => {
             </ul>
 
             {/* <button className="my-4 hidden md:block thebtn">Get The App</button> */}
+          </nav>
+
+          <div className="actions">
+            <Button type="primary">Try Nubis Go</Button>
             <div>
               <IoMenu
                 size={40}
                 color="#fff"
                 className="flex my-4 md:hidden"
-                onClick={toggleNav}
+                // onClick={toggleNav}
               />
             </div>
           </div>
         </div>
       </header>
-    </div>
+    </Affix>
   );
 };
 
 export default Header;
 
-const links = ["about us", "our services", "faqs", "contact us"];
+const links = ["Individual", "Rider", "Corporate", "Support"];
